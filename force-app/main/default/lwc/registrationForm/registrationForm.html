@@ -1,0 +1,30 @@
+<template>
+    <lightning-card if:false={validMeetup} title="Invalid Meetup" class="slds-card__body_inner">
+        <p>This meetup can't be found, or doesn't exist. Please verify that you have the correct registration code URL.</p>
+    </lightning-card>
+    <lightning-card if:false={registrationAllowed} title="Meetup Registration Unavailable" class="slds-card__body_inner">
+        <p>This meetup can not currently be registered for.</p>
+    </lightning-card>
+    <lightning-card if:true={showForm} title={meetupName} class="slds-card__body_inner">
+        <lightning-record-edit-form 
+            object-api-name="MeetupRegistration__c" 
+            onsuccess={handleSuccess}
+            onsubmit={handleSubmit}
+            onerror={handleError}
+        >
+            <p>To register for this meetup, fill out and submit the form below.</p>
+            <!-- Reduce form complexity by hiding this lookup, and just displaying the meetup name in card title.-->
+            <lightning-input-field field-name="Meetup__c" disabled="true" value={meetupId} class="slds-hide"></lightning-input-field>
+            <lightning-input-field field-name="FirstName__c"></lightning-input-field>
+            <lightning-input-field field-name="LastName__c"></lightning-input-field>
+            <lightning-input-field field-name="Email__c"></lightning-input-field>
+            <lightning-button
+                variant="brand"
+                class="slds-m-top_small"
+                type="submit"
+                label="Submit Registration"
+            >
+            </lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
