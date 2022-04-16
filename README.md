@@ -11,7 +11,7 @@ Users can be sent to a simple Registration Page for a given Meetup, e.g. https:/
 From here, they can enter the required fields and submit a registration.
 ![image](https://user-images.githubusercontent.com/103609517/163692466-da18b4db-d394-4b8c-8254-97f2d01deae9.png)
 
-If an existing registraiton matches their email, they will be shown a notice.
+If an existing registration matches their email, they will be shown a notice.
 ![image](https://user-images.githubusercontent.com/103609517/163692490-b06cf86d-7596-423e-8133-60e13300f672.png)
 
 Additionally, users will see a message if the event is no longer open, or has exceeded registration limit.
